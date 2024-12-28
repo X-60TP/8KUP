@@ -12,7 +12,7 @@
 # 2.歌手/专辑列表正常展示 
 # 3.去除随机播放
 
-[Header Rewrite]
+[URL Rewrite]
 # if-none-match返回304状态码
 http-request ^https:\/\/spclient\.wg\.spotify\.com\/user-customization-service\/v1\/customize$ header-del if-none-match
 
