@@ -1,8 +1,8 @@
 #!name=spotify1a
 #!desc=2024.05.27 
-# 部分解锁premium
+# 部分解锁 premium
 # 音质不能设置为超高
-# 建议登录后再打开脚本
+# 登录后再打开脚本
 # 重启app等待脚本生效
 # 仓库地址 
 # https://github.com/app2smile/rules
@@ -18,6 +18,8 @@ http-request ^https:\/\/spclient\.wg\.spotify\.com\/user-customization-service\/
 [MITM]
 hostname = %APPEND% spclient.wg.spotify.com
 
+# https://raw.githubusercontent.com/X-60TP/8KUP/refs/heads/main/spotify-request.js
+
 [Script]
-spotify-json = type=http-request,pattern=^https:\/\/spclient\.wg\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/,requires-body=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js
-spotify-proto = type=http-response,pattern=^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js,script-update-interval=0
+spotify-json = type=http-request,pattern=^https:\/\/spclient\.wg\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/,requires-body=0,script-path=https://raw.githubusercontent.com/X-60TP/8KUP/refs/heads/main/spotify-request.js
+spotify-proto = type=http-response,pattern=^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/X-60TP/8KUP/refs/heads/main/spotify-response.js,script-update-interval=0
