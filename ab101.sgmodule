@@ -1,0 +1,129 @@
+#!name=adblock 101
+#!desc=通用，水印相机
+
+[Rule]
+#🟢🔵🟠
+# keyword
+# 通用
+DOMAIN-KEYWORD,adx,REJECT
+DOMAIN-KEYWORD,market,REJECT
+DOMAIN-KEYWORD,report,REJECT
+# 国内
+DOMAIN-SUFFIX,dcloud.net.cn,REJECT
+DOMAIN-KEYWORD,umeng,REJECT
+DOMAIN-SUFFIX,umeng.com,REJECT
+DOMAIN-SUFFIX,umengcloud.com,REJECT
+DOMAIN-SUFFIX,puata.info,REJECT
+DOMAIN-KEYWORD,jiguang,REJECT
+DOMAIN-SUFFIX,jiguang.cn,REJECT
+DOMAIN-KEYWORD,jpush,REJECT
+DOMAIN-SUFFIX,jpush.cn,REJECT
+DOMAIN-SUFFIX,easytomessage.com,REJECT
+DOMAIN-KEYWORD,getui,REJECT
+DOMAIN-KEYWORD,gepush,REJECT
+# 国外
+#ca.iadsdk.apple.com:443☕️🍔☑️
+#app-analytics-services.com:443🌀
+#sessions.bugsnag.com:443🟣
+#tracking.mcdonalds.com.cn:443🍔
+#trackinghub.starbucks.com.cn:443☕️
+#analytics.nike.com.cn:443☑️
+#dtcy0bqpv6jys.cloudfront.net:443🔵
+DOMAIN-SUFFIX,iadsdk.apple.com,REJECT
+DOMAIN-KEYWORD,analytics,REJECT
+DOMAIN-KEYWORD,bug,REJECT
+DOMAIN-KEYWORD,track,REJECT
+# 高德🟢
+#dispatcher.is.autonavi.com:443🟥🟢
+#          restios.amap.com:443🟥🟠☕️
+#http://restios.amap.com/sdk/compliance/params🟥🟠
+#          restapi.amap.com:443🟥🟠
+#dualstack-arestapi.amap.com:443🟥🟠☕️
+#http://dualstack-arestapi.amap.com/sdk/compliance/params🟥🟠
+DOMAIN-KEYWORD,dualstack,REJECT
+DOMAIN-KEYWORD,log,REJECT
+DOMAIN-KEYWORD,rest,REJECT
+# 阿里🟢
+#adash-emas.cn-hangzhou.aliyuncs.com:443🟠
+#adashbc.ut.taobao.com:443🟠
+#adashxgc.ut.taobao.com:443🟠
+#            beacon-api.aliyuncs.com:443🟠
+#              dypnsapi.aliyuncs.com:443🟠
+#             mpush-api.aliyun.com:443🟠
+DOMAIN-KEYWORD,adash,REJECT
+DOMAIN-KEYWORD,beacon,REJECT
+DOMAIN,dypnsapi.aliyuncs.com,REJECT
+DOMAIN,mpush-api.aliyun.com,REJECT
+# 腾讯🟢
+#     pro.bugly.qq.com:443🟠
+#         sdk.e.qq.com:443🟠
+#asr.cloud.tencent.com:443🟠
+#   cgi.connect.qq.com:443🟠
+#        mazu.m.qq.com:443🟠
+DOMAIN-KEYWORD,bug,REJECT
+DOMAIN-SUFFIX,e.qq.com,REJECT
+DOMAIN,asr.cloud.tencent.com,REJECT
+DOMAIN,cgi.connect.qq.com,REJECT
+DOMAIN,mazu.m.qq.com,REJECT
+# 个推🟢
+#        b-gtc.gepush.com:443🟠
+#        b-gtc.getui.net:443🟠
+#        c-gtc.gepush.com:443🟠
+#        c-gtc.getui.net:443🟠
+#      c-hzgt2.getui.com:443🟠
+#        c-ido.gepush.com:443🟠
+#        c-ido.getui.net:443🟠
+#          ido.gepush.com:443🟠
+#          ido.getui.net:443🟠
+#sdk.open.talk.gepush.com:5224🟠
+#sdk.open.talk.getui.com:5224🟠
+#sdk.open.talk.getui.net:5224🟠
+#43.231.145.10:5224🟠
+DOMAIN-KEYWORD,gepush,REJECT
+DOMAIN-KEYWORD,getui,REJECT
+DEST-PORT,5224,REJECT
+# 今日水印🟢
+#fanzhaapi.xhey.top:443🟠
+# sareport.xhey.top:443🟠
+#   static.xhey.top:443🟠
+#    today.xhey.top:443🟠
+# today-ha.xhey.top:443🟠
+#net-cloud.xhey.top:443🟠
+#http://203.107.1.67/172248/sign_d?🟠
+#http://*.*.*.*/172248/sign_d?🟠
+#api.anythinktech.com:443🟠
+# da.anythinktech.com:443🟠
+# tk.anythinktech.com:443🟠
+#adx-os.bridgeoos.com:443🟠
+#   api.bridgeoos.com:443🟠
+#    da.bridgeoos.com:443🟠
+#    tk.bridgeoos.com:443🟠
+#da.toponadss.com:443🟠
+#tk.toponadss.com:443🟠
+#xcamera-filter.oss-cn-beijing.aliyuncs.com:443🔵
+#dtcy0bqpv6jys.cloudfront.net:443🔵
+DOMAIN-SUFFIX,xhey.top,REJECT
+DOMAIN-KEYWORD,xhey,REJECT
+URL-REGEX,^http:\/\/\d+\.\d+\.\d+\.\d+\/172248\/sign_d\?,REJECT
+DOMAIN-SUFFIX,anythinktech.com,REJECT
+DOMAIN-KEYWORD,anythinktech,REJECT
+DOMAIN-SUFFIX,bridgeoos.com,REJECT
+DOMAIN-KEYWORD,bridgeoos,REJECT
+DOMAIN-SUFFIX,toponadss.com,REJECT
+DOMAIN-KEYWORD,toponadss,REJECT
+DOMAIN,xcamera-filter.oss-cn-beijing.aliyuncs.com,REJECT
+DOMAIN-KEYWORD,xcamera,REJECT
+DOMAIN-KEYWORD,xiaoheikeji,REJECT
+# 神策🟢
+#xiaoheikeji.sfn-tx-beijing-01.saas.sensorsdata.cn:443🟠
+#  http://abtest-tx-beijing-01.saas.sensorsdata.cn/api/v2/abtest/online/results🟠
+DOMAIN-SUFFIX,sensorsdata.cn,REJECT
+DOMAIN-KEYWORD,sensorsdata,REJECT
+# 南瓜个人🟢⛔️http⛔️
+#http://adx.sogaha.cn/sdk/ad/appList?🟠
+#http://adx.sogaha.cn/sdk/ad/init?🟠
+#http://adx.sogaha.cn/sdk/ad/setting?🟠
+#http://adx.sogaha.cn/sdk/id/generator?🟠
+DOMAIN-SUFFIX,sogaha.cn,REJECT
+DOMAIN-KEYWORD,sogaha,REJECT
+#🟢🔵🟠
