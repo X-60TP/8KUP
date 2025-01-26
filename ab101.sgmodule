@@ -7,6 +7,7 @@
 # keyword
 # 通用🟢
 DOMAIN-KEYWORD,adx,REJECT
+DOMAIN,market.sptcc.com,DIRECT
 DOMAIN-KEYWORD,market,REJECT
 DOMAIN-KEYWORD,report,REJECT
 # 国内🟢
@@ -75,6 +76,7 @@ DOMAIN,cgi.connect.qq.com,REJECT
 DOMAIN,mazu.m.qq.com,REJECT
 # 美团✅
 # s3plus.meituan.net:443🟠
+URL-REGEX,^https:\/\/s3plus\.meituan\.net\/.+\/files\/,DIRECT
 DOMAIN,s3plus.meituan.net,REJECT
 # 个推🟢
 #        b-gtc.gepush.com:443🟠
