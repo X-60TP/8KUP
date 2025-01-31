@@ -49,6 +49,7 @@ DOMAIN-KEYWORD,track,REJECT
 #              logs.amap.com:443
 #    dualstack-logs.amap.com:443
 DOMAIN-KEYWORD,dualstack,REJECT
+DOMAIN,login5.spotify.com,美国一
 DOMAIN-KEYWORD,log,REJECT
 DOMAIN-KEYWORD,rest,REJECT
 DOMAIN-KEYWORD,amap,REJECT
