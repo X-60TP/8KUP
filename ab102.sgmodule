@@ -1,4 +1,14 @@
-102
+#!name=ab102
+#!desc=ads block 102
+#
+#https://raw.githubusercontent.com/X-60TP/8KUP/refs/heads/main/ab102.sgmodule
+#
+# block “buy itunes”, ntp, dns, meituan plus
+#
+
+[Rule]
+// Added for: buy.itunes.apple.com:443
+DOMAIN,buy.itunes.apple.com,REJECT
 
 # time
 // Added for: time.asia.apple.com:123
@@ -16,40 +26,69 @@ DOMAIN,tw.pool.ntp.org,REJECT
 DOMAIN,jp.pool.ntp.org,REJECT
 DOMAIN,sg.pool.ntp.org,REJECT
 
-// Added for: http://sdkoptedge.chinanetcenter.com/sdk/v2
-?return_client_ip=1&url_type=1
-// Added for: http://kuaishou.httpdns.pro/d
-?id=8014&clientip=1&dns-burst=1&ttl=1&query=1&dn=1251413404.vod2.myqcloud.com,
-beauty-tx-flv-live.meituan.net,
-beauty-tx-flv.meituan.net&type=ADDRS
-// Added for: http://httpdns.alicdn.com/multi_httpdns_resolve
-?host_key=mtvod.meituan.net%3b
-beauty-ali-flv-live.meituan.net%3b
-beauty-ali-flv.meituan.net%3b
-mtvod-ali.meituan.net&qtype=all
-// Added for: http://httpdns.bcelive.com/
-?dns=
-s3plus.meituan.net,
-mtvod-bd.meituan.net
-&type=dual_stack
-// Added for: http://httpdns.c.cdnhwc2.com/dns/live
-?num=5&domain=
-beauty-hw-flv-live.meituan.net,
-beauty-hw-flv.meituan.net
-&qtype=ADDRS
+# meituan plus
+// Added for: api-unionid.meituan.com:443
+DOMAIN,api-unionid.meituan.com,REJECT
 
+// Added for: https://img.meituan.net/content/13907d8e3a7d6ae35c476fe032f24011196415.jpg%40240w_240h_1e_1c_1l%7Cwatermark%3D0.webp
+URL-REGEX,^https:\/\/img\.meituan\.net\/.+watermark,REJECT
 
-DOMAIN,sdkoptedge.chinanetcenter.com,REJECT
-DOMAIN,kuaishou.httpdns.pro,REJECT
+// Added for: https://p0.meituan.net/wmproduct/69044653ef6f9453ba27af6c05cb904d1176924.webp@watermark=1&&object=L3dtcHJvZHVjdC9kZWJiN2M1ZTgyZjJiNjU4Y2ZmNzA1ZTg1N2FjOTcwYjgxLnBuZw==%7C382h_382w_1e_1l.webp
+URL-REGEX,^https:\/\/p\d\.meituan\.net\/.+watermark,REJECT
+
+// Added for: 
+#http://httpdns.alicdn.com/multi_httpdns_resolve
+#?host_key=
+#mtvod.meituan.net%3b
+#beauty-ali-flv-live.meituan.net%3b
+#beauty-ali-flv.meituan.net%3b
+#mtvod-ali.meituan.net
+#&qtype=all
+// Added for: 
+#http://httpdns.bcelive.com/
+#?dns=
+#s3plus.meituan.net,
+#mtvod-bd.meituan.net
+#&type=dual_stack
+// Added for: 
+#http://httpdns.c.cdnhwc2.com/dns/live
+#?num=5&domain=
+#beauty-hw-flv-live.meituan.net,
+#beauty-hw-flv.meituan.net
+#&qtype=ADDRS
+// Added for: httpdns.meituan.com:443
+// Added for: 
+#http://kuaishou.httpdns.pro/d
+#?id=8014&clientip=1&dns-burst=1&ttl=1&query=1&dn=
+#1251413404.vod2.myqcloud.com,
+#beauty-tx-flv-live.meituan.net,
+#beauty-tx-flv.meituan.net
+#&type=ADDRS
+// Added for: 
+#http://sdkoptedge.chinanetcenter.com/sdk/v2
+#?return_client_ip=1&url_type=1
+// Added for: dns.qq.com:443
+
 DOMAIN,httpdns.alicdn.com,REJECT
 DOMAIN,httpdns.bcelive.com,REJECT
 DOMAIN,httpdns.c.cdnhwc2.com,REJECT
+DOMAIN,httpdns.meituan.com,REJECT
+DOMAIN,kuaishou.httpdns.pro,REJECT
+DOMAIN,sdkoptedge.chinanetcenter.com,REJECT
 
+DOMAIN,mtvod.meituan.net,REJECT
+DOMAIN,beauty-ali-flv-live.meituan.net,REJECT
+DOMAIN,beauty-ali-flv.meituan.net,REJECT
+DOMAIN,mtvod-ali.meituan.net,REJECT
+DOMAIN,s3plus.meituan.net,REJECT
+DOMAIN,mtvod-bd.meituan.net,REJECT 
+DOMAIN,beauty-hw-flv-live.meituan.net,REJECT
+DOMAIN,beauty-hw-flv.meituan.net,REJECT
+DOMAIN-SUFFIX,vod2.myqcloud.com,REJECT
+DOMAIN,beauty-tx-flv-live.meituan.net,REJECT
+DOMAIN,beauty-tx-flv.meituan.net,REJECT
 
-DOMAIN-SUFFIX,dianping.com,REJECT // Added for: medusa.dianping.com:443
-DOMAIN-SUFFIX,neixin.cn,REJECT // Added for: api.neixin.cn:443
-DOMAIN,httpdns.meituan.com,REJECT // Added for: httpdns.meituan.com:443
-DOMAIN,api-unionid.meituan.com,REJECT // Added for: api-unionid.meituan.com:443
-DOMAIN-SUFFIX,d.meituan.net,REJECT // Added for: https://o1.d.meituan.net/
-DOMAIN,creditpay.meituan.com,DIRECT // Added for: creditpay.meituan.com:443
-DOMAIN,creditpay.meituan.com,DIRECT // Added for: creditpay.meituan.com:443
+DOMAIN,dns.qq.com,REJECT
+
+[MITM]
+hostname = %APPEND% *.meituan.net
