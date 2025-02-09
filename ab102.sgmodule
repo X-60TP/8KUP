@@ -80,6 +80,8 @@ DOMAIN,mtvod.meituan.net,REJECT
 DOMAIN,beauty-ali-flv-live.meituan.net,REJECT
 DOMAIN,beauty-ali-flv.meituan.net,REJECT
 DOMAIN,mtvod-ali.meituan.net,REJECT
+URL-REGEX,^https:\/\/s3plus\.meituan\.net\/.+\/files\/,DIRECT
+// Added for: https://s3plus.meituan.net/v1/mss_0ddf9b250a1b4db28fb1d9ad764b2853/files/banma_fe_mp/cabinet/common/icon_close.png
 DOMAIN,s3plus.meituan.net,REJECT
 DOMAIN,mtvod-bd.meituan.net,REJECT 
 DOMAIN,beauty-hw-flv-live.meituan.net,REJECT
