@@ -102,7 +102,7 @@ URL-REGEX,^https:\/\/img\.meituan\.net\/adunion,REJECT
 // Added for: 🐱bikead https://img.meituan.net/adunion/a0b5e90137742bfa89435c5395f89e9838712.jpg%40191h_792w_1e_1l.webp%7Cformat=mif
 
 # 🐤 点击
-DOMAIN,lx0.meituan.com,REJECT
+#DOMAIN,lx0.meituan.com,REJECT
 // Added for: https://lx0.meituan.com/
 DOMAIN,ddplus.meituan.net,REJECT
 // Added for: https://ddplus.meituan.net/v1/mss_e63d09aec75b41879dcb3069234793ac/ddblue/748309_68ba01e8a50cfc83bb8951c96c096aaa.json
