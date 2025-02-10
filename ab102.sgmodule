@@ -1,16 +1,16 @@
 #!name=ab102
 #!desc=ads block 102
 #
-#https://raw.githubusercontent.com/X-60TP/8KUP/refs/heads/main/ab102.sgmodule
+# https://raw.githubusercontent.com/X-60TP/8KUP/refs/heads/main/ab102.sgmodule
 #
 # block “buy itunes”, ntp, dns, meituan plus
 #
 
 [Rule]
-// Added for: buy.itunes.apple.com:443
+// Added for: 🐤 buy.itunes.apple.com:443
 DOMAIN,buy.itunes.apple.com,REJECT
 
-# time
+# 🐤 time ntp
 // Added for: time.asia.apple.com:123
 // Added for: asia.pool.ntp.org:123
 // Added for: cn.pool.ntp.org:123
@@ -26,16 +26,7 @@ DOMAIN,tw.pool.ntp.org,REJECT
 DOMAIN,jp.pool.ntp.org,REJECT
 DOMAIN,sg.pool.ntp.org,REJECT
 
-# meituan plus
-// Added for: api-unionid.meituan.com:443
-DOMAIN,api-unionid.meituan.com,REJECT
-
-// Added for: https://img.meituan.net/content/13907d8e3a7d6ae35c476fe032f24011196415.jpg%40240w_240h_1e_1c_1l%7Cwatermark%3D0.webp
-URL-REGEX,^https:\/\/img\.meituan\.net\/.+watermark,REJECT
-
-// Added for: https://p0.meituan.net/wmproduct/69044653ef6f9453ba27af6c05cb904d1176924.webp@watermark=1&&object=L3dtcHJvZHVjdC9kZWJiN2M1ZTgyZjJiNjU4Y2ZmNzA1ZTg1N2FjOTcwYjgxLnBuZw==%7C382h_382w_1e_1l.webp
-URL-REGEX,^https:\/\/p\d\.meituan\.net\/.+watermark,REJECT
-
+# 🐤 meituan dns plus, qq dns
 // Added for: 
 #http://httpdns.alicdn.com/multi_httpdns_resolve
 #?host_key=
@@ -80,17 +71,79 @@ DOMAIN,mtvod.meituan.net,REJECT
 DOMAIN,beauty-ali-flv-live.meituan.net,REJECT
 DOMAIN,beauty-ali-flv.meituan.net,REJECT
 DOMAIN,mtvod-ali.meituan.net,REJECT
-URL-REGEX,^https:\/\/s3plus\.meituan\.net\/.+\/files\/,DIRECT
-// Added for: https://s3plus.meituan.net/v1/mss_0ddf9b250a1b4db28fb1d9ad764b2853/files/banma_fe_mp/cabinet/common/icon_close.png
 DOMAIN,s3plus.meituan.net,REJECT
 DOMAIN,mtvod-bd.meituan.net,REJECT 
 DOMAIN,beauty-hw-flv-live.meituan.net,REJECT
 DOMAIN,beauty-hw-flv.meituan.net,REJECT
+
+DOMAIN,1251413404.vod2.myqcloud.com,REJECT
+// Added for: 🐱 1251413404.vod2.myqcloud.com:80
 DOMAIN-SUFFIX,vod2.myqcloud.com,REJECT
+
 DOMAIN,beauty-tx-flv-live.meituan.net,REJECT
 DOMAIN,beauty-tx-flv.meituan.net,REJECT
 
 DOMAIN,dns.qq.com,REJECT
 
+# 🐤 meituan plus
+# 🐤 watermark
+// Added for: https://img.meituan.net/content/13907d8e3a7d6ae35c476fe032f24011196415.jpg%40240w_240h_1e_1c_1l%7Cwatermark%3D0.webp
+URL-REGEX,^https:\/\/img\.meituan\.net\/.+watermark,REJECT
+
+// Added for: https://p0.meituan.net/wmproduct/69044653ef6f9453ba27af6c05cb904d1176924.webp@watermark=1&&object=L3dtcHJvZHVjdC9kZWJiN2M1ZTgyZjJiNjU4Y2ZmNzA1ZTg1N2FjOTcwYjgxLnBuZw==%7C382h_382w_1e_1l.webp
+URL-REGEX,^https:\/\/p\d\.meituan\.net\/.+watermark,REJECT
+
+# 🐤 开屏
+DOMAIN,flowplus.meituan.net,DIRECT
+// Added for: https://flowplus.meituan.net/v1/mss_a002ed9fc97544cebd70304686903863/linglong/1737616921382.jpg
+
+# 🐤 mbike
+URL-REGEX,^https:\/\/img\.meituan\.net\/adunion,REJECT 
+// Added for: 🐱bikead https://img.meituan.net/adunion/a0b5e90137742bfa89435c5395f89e9838712.jpg%40191h_792w_1e_1l.webp%7Cformat=mif
+
+# 🐤 点击
+DOMAIN,lx0.meituan.com,REJECT
+// Added for: https://lx0.meituan.com/
+DOMAIN,ddplus.meituan.net,REJECT
+// Added for: https://ddplus.meituan.net/v1/mss_e63d09aec75b41879dcb3069234793ac/ddblue/748309_68ba01e8a50cfc83bb8951c96c096aaa.json
+
+# 🐤 ads-hermes
+#https://bike.meituan.com/api/ads-hermes/resource?businessId=100&spotId=12
+URL-REGEX,^https:\/\/bike\.meituan\.com\/api\/ads-hermes,REJECT
+
+# 🐤 取件 清缓存
+#https://s3plus.sankuai.com/v1/mss_a93322e643254308b43863f3ff4f0aa5/iot-pickup-cabinet/ad/1736161219857/美团订单取件列表页.png
+#.../1735875808634/取件存件完成页.gif
+#.../1735550689968/非美团订单-号码匹配取件弹窗.png
+#.../1735894890625/美团订单取件列表页.png
+#.../1735550705092/格口地图页.png
+#.../1736161153172/美团订单取件列表页.png
+DOMAIN,s3plus.sankuai.com,REJECT
+
+# 🐤 ad union id
+#https://api-unionid.meituan.com/mc/config
+DOMAIN,api-unionid.meituan.com,REJECT
+
+#https://img.meituan.net/adunion/71fcd66c75af764505e3feed7e11eddb69990.jpg@191h_792w_1e_1l.webp
+
+URL-REGEX,^https:\/\/p\d\.meituan\.net\/adunion,REJECT
+URL-REGEX,^https:\/\/img\.meituan\.net\/adunion,REJECT
+
+URL-REGEX,^https:\/\/w\.meituan\.net\/.+ad-union,REJECT
+// Added for: https://w.meituan.net/v1/mss_28af88a282204bf6a754a48cbfabcb15/waimai-mach/16100/7207082/mach_waimai-ad-union-micro-template-platinum-entry.dio.zip
+
+#https://portal-portm.meituan.com/horn/v1/modules/lxsdk_mp_config_new?os=android&app_name=group&app_version=12.24.403&category=data_sdk_group&sdk_version=3.10.4&union_id=c0c7084b13f148b28e9fe334eeee1a8aa157186821385682446
+URL-REGEX,^https:\/\/portal-portm\.meituan\.com\/.+union_id,REJECT
+
+# 🐤 dianping
+DOMAIN-SUFFIX,dianping.com,REJECT
+// Added for: medusa.dianping.com:443
+#https://p0.meituan.net/dpmerchantpic/97e6a377506b2499649c9b009adcba03106355.jpg@288h_358w_1e_1l.webp
+URL-REGEX,^https:\/\/p\d\.meituan\.net\/dpmerchantpic,REJECT
+
+DOMAIN-SUFFIX,neixin.cn,REJECT
+// Added for: api.neixin.cn:443
+
 [MITM]
-hostname = %APPEND% *.meituan.net
+hostname = %APPEND% *.meituan.net, *.meituan.com
+
