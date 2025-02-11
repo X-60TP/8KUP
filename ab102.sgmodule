@@ -71,6 +71,7 @@ DOMAIN,mtvod.meituan.net,REJECT
 DOMAIN,beauty-ali-flv-live.meituan.net,REJECT
 DOMAIN,beauty-ali-flv.meituan.net,REJECT
 DOMAIN,mtvod-ali.meituan.net,REJECT
+URL-REGEX,^https:\/\/s3plus\.meituan\.net\/.+\/files,DIRECT
 DOMAIN,s3plus.meituan.net,REJECT
 DOMAIN,mtvod-bd.meituan.net,REJECT 
 DOMAIN,beauty-hw-flv-live.meituan.net,REJECT
