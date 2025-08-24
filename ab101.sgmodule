@@ -52,7 +52,7 @@ DOMAIN-KEYWORD,dualstack,REJECT
 DOMAIN,login5.spotify.com,"ad 米"
 DOMAIN-KEYWORD,log,REJECT
 DOMAIN-KEYWORD,rest,REJECT
-DOMAIN-KEYWORD,amap,REJECT
+-DOMAIN-KEYWORD,amap,REJECT
 # 阿里🟢
 #adash-emas.cn-hangzhou.aliyuncs.com:443🟠
 #adashbc.ut.taobao.com:443🟠
